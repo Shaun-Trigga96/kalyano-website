@@ -1,0 +1,254 @@
+/* KALYANO App Styles */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* KALYANO 3D Logo Effect */
+/* .kalyano-logo {a
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #800080, #a855f7, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    2px 2px 4px rgba(128, 0, 128, 0.3),
+    4px 4px 8px rgba(128, 0, 128, 0.2);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.kalyano-logo:hover {
+  transform: scale(1.05);
+  text-shadow: 
+    3px 3px 6px rgba(128, 0, 128, 0.4),
+    6px 6px 12px rgba(128, 0, 128, 0.3);
+} */
+
+/* Mobile Navigation Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(128, 0, 128, 0.95), rgba(168, 85, 247, 0.95));
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  transition: left 0.3s ease;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+/* Hero Section Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.fade-in-up:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* AMAPIANO Pulse Animation */
+@keyframes amapianoSpulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(128, 0, 128, 0.5);
+  }
+}
+
+.amapiano-pulse {
+  animation: amapianoPulse 2s ease-in-out infinite;
+}
+
+/* Service Card Hover Effects */
+.service-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(168, 85, 247, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.service-card:hover::before {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Video Portfolio Hover Effects */
+.video-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(128, 0, 128, 0.2);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(128, 0, 128, 0.8), rgba(168, 85, 247, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+  opacity: 1;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, #800080, #a855f7, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #800080, #a855f7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6b0066, #9333ea);
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 768px) {
+  .kalyano-logo {
+    font-size: 2rem;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(128, 0, 128, 0.3);
+  border-radius: 50%;
+  border-top-color: #800080;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #800080, #a855f7);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(128, 0, 128, 0.3);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}

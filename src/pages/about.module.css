@@ -1,0 +1,294 @@
+/* About Page Styles */
+.pageContainer {
+  min-height: 100vh;
+  padding: 4rem 0;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contentWrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #111827;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .missionGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.missionSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.missionTitle {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #800080;
+}
+
+.missionText {
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.missionText:last-child {
+  margin-bottom: 0;
+}
+
+.amapianoCard {
+  background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d8b4fe;
+}
+
+.amapianoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.amapianoText {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.expertiseSection {
+  background: linear-gradient(135deg, #000000 0%, #1f1f1f 100%);
+  color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+.expertiseTitle {
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .expertiseGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.expertiseColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.expertiseSubtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #a855f7;
+}
+
+.expertiseList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expertiseList li {
+  font-size: 1rem;
+  color: #ffffff;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.expertiseList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #a855f7;
+  font-weight: bold;
+}
+
+/* Team Section Styles */
+.teamSection {
+  margin-top: 4rem;
+}
+
+.teamCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.teamCardHeader {
+  background: linear-gradient(135deg, #800080 0%, #a855f7 100%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.teamCardTitle {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.teamIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.teamCardContent {
+  padding: 2rem;
+}
+
+.teamDescription {
+  font-size: 1.125rem;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.memberCard {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+}
+
+.memberCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.memberCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.memberImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a855f7;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.memberCard:hover .memberImage {
+  border-color: #800080;
+}
+
+.memberName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  text-align: center;
+}
+
+.memberRole {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .mainTitle {
+    font-size: 2.25rem;
+  }
+  
+  .pageContainer {
+    padding: 2rem 0;
+  }
+  
+  .expertiseSection {
+    padding: 2rem 1rem;
+  }
+  
+  .teamCardContent {
+    padding: 1.5rem;
+  }
+  
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

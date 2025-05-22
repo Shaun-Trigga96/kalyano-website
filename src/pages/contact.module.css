@@ -1,0 +1,452 @@
+/* Contact Page Styles */
+.pageContainer {
+    min-height: 100vh;
+    padding: 4rem 0;
+    background: linear-gradient(to bottom right, #faf5ff, #ffffff);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .mainTitle {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #5b0060;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+  }
+  
+  .contentGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1024px) {
+    .contentGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .infoCard {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+  
+  .infoTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #5b0060;
+  }
+  
+  .infoItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .iconContainer {
+    background-color: #e9d5ff;
+    padding: 0.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #800080;
+  }
+  
+  .infoItemTitle {
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .infoItemText {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+  
+  .noticeCard {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(to right, #fefce8, #fef9c3);
+    border-radius: 0.5rem;
+    border-left: 4px solid #facc15;
+  }
+  
+  .noticeTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #78350f;
+  }
+  
+  .noticeText {
+    color: #713f12;
+    font-size: 1rem;
+  }
+  
+  .hoursCard {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(to right, #e9d5ff, #f3e8ff);
+    border-radius: 0.5rem;
+  }
+  
+  .hoursTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #5b0060;
+  }
+  
+  .hoursList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: #6d28d9;
+    font-size: 1rem;
+  }
+  
+  .hoursList strong {
+    font-weight: 600;
+  }
+  
+  .formCard {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+  
+  .formTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #5b0060;
+  }
+  
+  .formFields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formLabel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formInput,
+  .formSelect,
+  .formTextarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .formInput:focus,
+  .formSelect:focus,
+  .formTextarea:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #800080;
+  }
+  
+  .formTextarea {
+    resize: none;
+    min-height: 7.5rem;
+  }
+  
+  .formButton {
+    width: 100%;
+    background: linear-gradient(to right, #800080, #5b0060);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .formButton:hover {
+    background: linear-gradient(to right, #6b0066, #4c0051);
+    transform: scale(1.05);
+  }
+  
+  .formNote {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .quickContactSection {
+    margin-top: 4rem;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .quickContactTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #5b0060;
+  }
+  
+  .quickContactGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .quickContactGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .quickContactCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .quickContactCard:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .quickContactIconContainer {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  
+  .whatsappIconContainer {
+    background-color: #d1fae5;
+  }
+  
+  .callIconContainer {
+    background-color: #dbeafe;
+  }
+  
+  .bookIconContainer {
+    background-color: #e9d5ff;
+  }
+  
+  .quickContactIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .whatsappIcon {
+    color: #16a34a;
+  }
+  
+  .callIcon {
+    color: #2563eb;
+  }
+  
+  .bookIcon {
+    color: #800080;
+  }
+  
+  .quickContactCardTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+  
+  .quickContactCardText {
+    color: #6b7280;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .quickContactButton {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .whatsappButton {
+    background-color: #16a34a;
+  }
+  
+  .whatsappButton:hover {
+    background-color: #15803d;
+  }
+  
+  .callButton {
+    background-color: #2563eb;
+  }
+  
+  .callButton:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .bookButton {
+    background-color: #9333ea;
+  }
+  
+  .bookButton:hover {
+    background-color: #7e22ce;
+  }
+  
+  .mapSection {
+    margin-top: 4rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .mapCard {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+  
+  .mapTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #5b0060;
+  }
+  
+  .mapContent {
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mapContentInner {
+    text-align: center;
+  }
+  
+  .mapIcon {
+    width: 4rem;
+    height: 4rem;
+    color: #800080;
+    margin: 0 auto 1rem;
+  }
+  
+  .mapContentTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+  
+  .mapContentText {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+  
+  .mapContentNote {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  
+  .faqSection {
+    margin-top: 4rem;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .faqTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #5b0060;
+  }
+  
+  .faqCard {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+  
+  .faqItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .faqItem {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+  }
+  
+  .faqItem:last-child {
+    border-bottom: none;
+  }
+  
+  .faqQuestion {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  
+  .faqAnswer {
+    color: #6b7280;
+    font-size: 1rem;
+  }

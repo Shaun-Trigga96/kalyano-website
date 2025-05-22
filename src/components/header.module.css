@@ -1,0 +1,113 @@
+/* Header Styles */
+.header {
+  background-color: #000000; /* */
+  color: #ffffff; /* */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* */
+  position: sticky; /* */
+  top: 0; /* */
+  z-index: 50; /* */
+}
+
+.container {
+  max-width: 1200px; /* */
+  margin: 0 auto; /* */
+  padding: 0 1rem; /* */
+}
+
+.headerContent {
+  display: flex; /* */
+  align-items: center; /* */
+  justify-content: space-between; /* */
+  padding: 0.75rem 0; /* */
+}
+
+.logoContainer {
+  display: flex; /* */
+  align-items: center; /* */
+  text-decoration: none; /* Ensure link doesn't underline image */
+}
+
+.logoImage {
+  height: 50px; /* Adjust as needed, e.g., to match original logo size */
+  width: auto;   /* Maintain aspect ratio */
+  /* Add other styles if necessary, e.g., margin-right if space is needed */
+}
+
+/* Styles for .logoBox, .logoText, .logoSubtext from the original file were removed as they are no longer used. */
+
+.desktopNav {
+  display: flex; /* */
+  gap: 2rem; /* */
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none; /* */
+  }
+}
+
+.navLink {
+  color: #ffffff; /* */
+  text-decoration: none; /* */
+  transition: color 0.3s ease; /* */
+  padding: 0.5rem 0; /* Added for better clickable area and consistent spacing */
+}
+
+.navLink:hover {
+  color: #a855f7; /* */
+}
+
+.navLink.active {
+  color: #a855f7; /* */
+  border-bottom: 2px solid #a855f7; /* */
+}
+
+.mobileMenuButton {
+  display: none; /* */
+  color: #ffffff; /* */
+  background: none; /* */
+  border: none; /* */
+  cursor: pointer; /* */
+  padding: 0.5rem; /* Added for better touch target */
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block; /* */
+  }
+}
+
+.mobileMenuButton svg {
+  width: 1.5rem; /* */
+  height: 1.5rem; /* */
+  display: block; /* Fix potential alignment issues */
+}
+
+.mobileNav {
+  margin-top: 1rem; /* */
+  padding-bottom: 1rem; /* */
+  border-top: 1px solid #1f2937; /* Visually separate mobile nav from header content */
+}
+
+@media (min-width: 769px) {
+  .mobileNav {
+    display: none; /* */
+  }
+}
+
+.mobileNavLink {
+  display: block; /* */
+  padding: 0.75rem 0; /* Adjusted for better touch targets */
+  color: #ffffff; /* */
+  text-decoration: none; /* */
+  transition: color 0.3s ease; /* */
+}
+
+.mobileNavLink:hover {
+  color: #a855f7; /* */
+}
+
+.mobileNavLink.active {
+  color: #a855f7; /* */
+  font-weight: bold; /* Make active link more prominent */
+}
