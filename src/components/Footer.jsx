@@ -27,7 +27,7 @@ const Footer = () => (
         <div className={styles.column}>
           <h3 className={styles.heading}>Contact</h3>
           <div className={styles.contactInfo}>
-            <p>📞 067 681 7119</p>
+            <p>📞 079 199 7326</p>
             <p>📞 068 247 6726</p>
             <p>📧 contact@kalyano.com</p>
           </div>

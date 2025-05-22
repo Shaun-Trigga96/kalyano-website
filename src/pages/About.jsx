@@ -3,22 +3,22 @@ import styles from './about.module.css';
 
 // 1. Import your images
 // Make sure these paths are correct and the images exist.
-// import hlumeloImage from '../assets/team/hlumelo-madonono.jpg'; // Example path
-// import onesimoImage from '../assets/team/onesimo-siloyi.jpg';   // Example path
-// import sihleImage from '../assets/team/sihle-vision.jpg';     // Example path
-// import viweImage from '../assets/team/viwe-mtuna.jpg';        // Example path
-// import thandoImage from '../assets/team/thandolwethu-siloyi.jpg';// Example path
+import hlumeloImage from '../assets/team/hlumelo-madonono.jpg'; // Example path
+import onesimoImage from '../assets/team/onesimo-siloyi.jpg';   // Example path
+//import sihleImage from '../assets/team/sihle-vision.jpg';     // Example path
+import viweImage from '../assets/team/viwe-mtuna.jpg';        // Example path
+import thandoImage from '../assets/team/thandolwethu-siloyi.jpg';// Example path
 import thabisoImage from '../assets/team/thabiso-matsaba.jpg';  // Example path
 
 const GENERIC_PLACEHOLDER_IMAGE_URL = 'https://placehold.co/100x100/EEE/CCC?text=No+Image';
 
 const About = () => {
   const teamMembers = [
-    { name: 'Hlumelo "RonnieSA" Madonono', role: 'DJ/Editor', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Hlumelo Madonono, DJ and Editor for KALYANO' },
-    { name: 'Onesimo "Sir Onies" Siloyi', role: 'DJ/Editor', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Onesimo Siloyi, DJ and Editor for KALYANO' },
-    { name: 'Sihle "Vision"', role: 'Production/Lead Video Editor', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Sihle, Lead Video Editor and Production for KALYANO' },
-    { name: 'Viwe Mtuna', role: 'Communications Director', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Viwe Mtuna, Communications Director for KALYANO' },
-    { name: 'Thandolwethu Siloyi', role: 'Production/Lead Video Editor', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Thandolwethu Siloyi, Lead Video Editor and Production for KALYANO' },
+    { name: 'Hlumelo "RonnieSA" Madonono', role: 'DJ/Editor', imageSrc: hlumeloImage, imageHint: 'Photo of Hlumelo Madonono, DJ and Editor for KALYANO' },
+    { name: 'Onesimo "Sir Onies" Siloyi', role: 'DJ/Editor', imageSrc: onesimoImage, imageHint: 'Photo of Onesimo Siloyi, DJ and Editor for KALYANO' },
+    { name: 'Siphesihle "Vision" Ndayi', role: 'Production/Lead Video Editor', imageSrc: GENERIC_PLACEHOLDER_IMAGE_URL, imageHint: 'Photo of Sihle, Lead Video Editor and Production for KALYANO' },
+    { name: 'Viwe Mtuna', role: 'Communications Director', imageSrc: viweImage, imageHint: 'Photo of Viwe Mtuna, Communications Director for KALYANO' },
+    { name: 'Thandolwethu Siloyi', role: 'Production/Lead Video Editor', imageSrc: thandoImage, imageHint: 'Photo of Thandolwethu Siloyi, Lead Video Editor and Production for KALYANO' },
     { name: 'Thabiso Matsaba', role: 'Technical Director', imageSrc: thabisoImage, imageHint: 'Photo of Thabiso Matsaba, Technical Director for KALYANO' },
   ];
 

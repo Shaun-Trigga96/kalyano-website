@@ -2,41 +2,61 @@ import React, { useState, useEffect } from 'react';
 import styles from './portfolio.module.css';
 
 const Portfolio = () => {
+  // Retrieve API key and Channel ID from environment variables or constants
+  // Ensure your API key is stored in a .env file as VITE_YOUTUBE_API_KEY for Vite projects
+  const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+  // Replace 'YOUR_KALYANO_CHANNEL_ID' with the actual Channel ID you found
+  const KALYANO_CHANNEL_ID = 'UCYrjLc-k1-fPkdvncWGHrzg';
+
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Mock video data (replace with actual YouTube API integration)
   useEffect(() => {
-    // Simulate API call
-    setTimeout(() => {
-      setVideos([
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'AMAPIANO Mix Session #1',
-          thumbnail: '/api/placeholder/480/360',
-          description: 'High-energy AMAPIANO mix featuring the latest hits'
-        },
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'DJ Set at Cape Town Venue',
-          thumbnail: '/api/placeholder/480/360',
-          description: 'Professional video mix production with multiple camera angles'
-        },
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'AMAPIANO Culture Showcase',
-          thumbnail: '/api/placeholder/480/360',
-          description: 'Cinematic video showcasing the vibrant AMAPIANO culture'
-        },
-        {
-          id: 'dQw4w9WgXcQ',
-          title: 'Artist Collaboration Mix',
-          thumbnail: '/api/placeholder/480/360',
-          description: 'Collaborative project featuring multiple AMAPIANO artists'
+    const fetchYouTubeVideos = async () => {
+      if (!YOUTUBE_API_KEY) {
+        console.error('YouTube API Key is missing. Please set VITE_YOUTUBE_API_KEY in your .env file.');
+        setError('YouTube API Key is missing. Cannot load videos.');
+        setLoading(false);
+        return;
+      }
+      if (KALYANO_CHANNEL_ID === 'YOUR_KALYANO_CHANNEL_ID' || !KALYANO_CHANNEL_ID) {
+        console.error('KALYANO YouTube Channel ID is not set.');
+        setError('YouTube Channel ID is not configured. Cannot load videos.');
+        setLoading(false);
+        return;
+      }
+
+      setLoading(true);
+      setError(null);
+      try {
+        // Fetches the 8 most recent videos from the specified channel
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${KALYANO_CHANNEL_ID}&part=snippet&maxResults=8&type=video&order=date`
+        );
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(`YouTube API error: ${response.status} - ${errorData.error.message || response.statusText}`);
         }
-      ]);
-      setLoading(false);
-    }, 1000);
+        const data = await response.json();
+
+        const fetchedVideos = data.items.map(item => ({
+          id: item.id.videoId,
+          title: item.snippet.title,
+          thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.medium?.url || item.snippet.thumbnails.default?.url,
+          description: item.snippet.description,
+        }));
+        setVideos(fetchedVideos);
+      } catch (err) {
+        console.error('Failed to fetch YouTube videos:', err);
+        setError(err.message || 'Failed to load videos. Please try again later.');
+        setVideos([]); // Clear videos on error
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchYouTubeVideos();
   }, []);
 
   return (
@@ -55,29 +75,43 @@ const Portfolio = () => {
             <div className={styles.loadingSpinner}></div>
             <p className={styles.loadingText}>Loading our latest work...</p>
           </div>
+      ) : error ? (
+        <div className={styles.errorSection}>
+          <p className={styles.errorText}>⚠️ {error}</p>
+        </div>
         ) : (
-          <div className={styles.videoGrid}>
-            {videos.map((video, index) => (
-              <div key={index} className={styles.videoCard}>
-                <div className={styles.videoImageContainer}>
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className={styles.videoImage}
-                  />
-                  <div className={styles.videoOverlay}>
-                    <button className={styles.watchButton}>
+        <div className={styles.videoGrid}>
+          {videos.length > 0 ? videos.map((video) => (
+            <div key={video.id} className={styles.videoCard}>
+              <div className={styles.videoImageContainer}>
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className={styles.videoImage}
+                  // Optional: Add an onError handler for thumbnails if needed
+                  // onError={(e) => { e.target.src = 'path/to/default/thumbnail.png'; }}
+                />
+                <div className={styles.videoOverlay}>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.watchButton}
+                  >
+                    <svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                       Watch Video
-                    </button>
-                  </div>
-                </div>
-                <div className={styles.videoContent}>
-                  <h3 className={styles.videoTitle}>{video.title}</h3>
-                  <p className={styles.videoDescription}>{video.description}</p>
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className={styles.videoContent}>
+                <h3 className={styles.videoTitle}>{video.title}</h3>
+                {/* <p className={styles.videoDescription}>{video.description}</p> */} {/* Description can be long, consider showing it on hover/click or a dedicated page */}
+              </div>
+            </div>
+          )) : <p className={styles.noVideosText}>No videos found. Check back later!</p>}
+        </div>
         )}
 
         <div className={styles.youtubeSection}>
