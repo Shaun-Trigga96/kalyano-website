@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
 import kalyanoLogo from '/src/assets/kalyano-logo.jpg'; // Assuming your logo is here
+import visionLogo from '../assets/vision-logo.jpg'; // Import the logo
 
 // Footer Component
 const Footer = () => (
@@ -14,6 +15,7 @@ const Footer = () => (
           </Link>          <p className={styles.description}>
             Young, talented content creators specializing in AMAPIANO culture and video mix production.
           </p>
+          <img src={visionLogo} alt="Cape Visions Studios Logo" className={styles.visionLogoFooter} />
         </div>
         <div className={styles.column}>
           <h3 className={styles.heading}>Quick Links</h3>

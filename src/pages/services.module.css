@@ -68,9 +68,19 @@
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   color: #ffffff;
   padding: 3rem 2rem;
-  text-align: center;
+  display: flex; /* Helps with centering if needed */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
   position: relative;
   overflow: hidden;
+}
+
+.headerLogo {
+  max-width: 150px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 0.5rem; /* Space above the logo */
+  margin-bottom: 0.5rem; /* Space below the logo */
 }
 
 .headerSection::before {

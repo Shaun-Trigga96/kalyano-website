@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './services.module.css';
+import visionLogo from '../assets/vision-logo.jpg'; // Import the logo
 
 const Services = () => (
   <div className={styles.pageContainer}>
@@ -10,6 +11,7 @@ const Services = () => (
         <div className={styles.serviceCard}>
           <div className={styles.headerSection}>
             <h2 className={styles.headerTitle}>CAPE VISIONS STUDIOS</h2>
+            <img src={visionLogo} alt="Cape Visions Studios Logo" className={styles.headerLogo} />
             <div className={styles.headerSubtitle}>KALYANO GROUP</div>
             <p className={styles.headerDescription}>Cape Town Price List 2025</p>
           </div>
@@ -20,7 +22,7 @@ const Services = () => (
               <div className={styles.packageHeader}>
                 <div className={styles.packageTitleSection}>
                   <h3 className={styles.packageTitle}>Basic Package</h3>
-                  <div className={styles.packageSubtitle}>Perfect for getting started</div>
+                  <div className={styles.packageSubtitle}>Perfect for upcoming DJs and artists to get a professional visual for their mix.</div>
                 </div>
                 <div className={styles.packagePriceSection}>
                   <span className={styles.packagePrice}>R1,400</span>
@@ -72,7 +74,7 @@ const Services = () => (
               <div className={styles.packageHeader}>
                 <div className={styles.packageTitleSection}>
                   <h3 className={styles.packageTitle}>Standard Package</h3>
-                  <div className={styles.packageSubtitle}>Most popular choice</div>
+                  <div className={styles.packageSubtitle}>Our most popular package, offering a balance of quality and features.</div>
                   <div className={styles.popularBadge}>POPULAR</div>
                 </div>
                 <div className={styles.packagePriceSection}>
@@ -141,7 +143,7 @@ const Services = () => (
               <div className={styles.packageHeader}>
                 <div className={styles.packageTitleSection}>
                   <h3 className={styles.packageTitle}>Premium Cinematic</h3>
-                  <div className={styles.packageSubtitle}>Complete professional experience</div>
+                  <div className={styles.packageSubtitle}>For established artists seeking top-tier visuals and extensive customization.</div>
                   <div className={styles.premiumBadge}>PREMIUM</div>
                 </div>
                 <div className={styles.packagePriceSection}>
@@ -216,7 +218,7 @@ const Services = () => (
             {/* Add-ons */}
             <div className={styles.addonsSection}>
               <h3 className={styles.addonsTitle}>Add-On Services</h3>
-              <div className={styles.addonsDescription}>Enhance your package with these optional extras</div>
+              <div className={styles.addonsDescription}>Tailored solutions for unique requirements, lyric videos, promotional content, etc.</div>
               <div className={styles.addonsGrid}>
                 <div className={styles.addonCard}>
                   <div className={styles.addonHeader}>

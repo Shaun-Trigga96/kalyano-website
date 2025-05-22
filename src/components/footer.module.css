@@ -7,7 +7,7 @@
 }
 
 .logoImage {
-  height: 50px;
+  height: 100px;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -101,4 +101,11 @@
   font-size: 0.95rem;
   color: #8E8E93; /* More subdued for copyright */
   font-weight: 400;
+}
+
+.visionLogoFooter {
+  max-width: 180px; /* Adjust as needed */
+  height: auto;    /* Maintain aspect ratio */
+  margin-top: 1rem; /* Add some space above the logo */
+  opacity: 1; /* Optional: make it slightly less prominent than the main logo */
 }
