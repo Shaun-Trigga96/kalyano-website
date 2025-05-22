@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './header.module.css';
 import kalyanoLogo from '/src/assets/kalyano-logo.jpg'; // Assuming your logo is here
+import { Menu, Home, Info, ListMusic, Youtube, Mail } from 'lucide-react'; // Removed unused: Share2, Filter, BotMessageSquare, Newspaper
 
 // Header Component
 const Header = () => {
@@ -9,6 +10,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
+
+  const navItems = [
+    { path: '/', label: 'Home', icon: <Home size={20} /> }, // Adjust size as needed
+    { path: '/about', label: 'About', icon: <Info size={20} /> },
+    { path: '/services', label: 'Services', icon: <ListMusic size={20} /> },
+    { path: '/portfolio', label: 'Portfolio', icon: <Youtube size={20} /> },
+    { path: '/contact', label: 'Contact', icon: <Mail size={20} /> }
+  ];
+  // Note: Share2, Filter, BotMessageSquare, Newspaper were imported but not used in the current nav structure.
+  // You can add them if you have corresponding sections.
 
   return (
     <header className={styles.header}>
@@ -21,19 +32,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className={styles.desktopNav}>
-            {[
-              { path: '/', label: 'Home' },
-              { path: '/about', label: 'About' },
-              { path: '/services', label: 'Services' },
-              { path: '/portfolio', label: 'Portfolio' },
-              { path: '/contact', label: 'Contact' }
-            ].map(({ path, label }) => (
+            {navItems.map(({ path, label, icon }) => (
               <Link
                 key={path}
                 to={path}
                 className={`${styles.navLink} ${isActive(path) ? styles.active : ''}`}
               >
-                {label}
+                {React.cloneElement(icon, { className: styles.navIcon })} 
+                {/* Cloning to add className for specific icon styling if needed via CSS modules */}
+                <span>{label}</span>
               </Link>
             ))}
           </nav>
@@ -46,29 +53,22 @@ const Header = () => {
             aria-controls="mobileNavMenu"
             aria-label="Toggle navigation menu"
           >
-            <svg className={styles.mobileMenuIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <Menu className={styles.mobileMenuIcon} size={24} /> {/* Using Lucide Menu icon */}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className={styles.mobileNav} id="mobileNavMenu">
-            {[
-              { path: '/', label: 'Home' },
-              { path: '/about', label: 'About' },
-              { path: '/services', label: 'Services' },
-              { path: '/portfolio', label: 'Portfolio' },
-              { path: '/contact', label: 'Contact' }
-            ].map(({ path, label }) => (
+            {navItems.map(({ path, label, icon }) => (
               <Link
                 key={path}
                 to={path}
                 className={`${styles.mobileNavLink} ${isActive(path) ? styles.active : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {label}
+                {React.cloneElement(icon, { className: styles.navIcon })}
+                <span>{label}</span>
               </Link>
             ))}
           </nav>

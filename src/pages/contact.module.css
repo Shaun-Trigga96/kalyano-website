@@ -1,452 +1,491 @@
 /* Contact Page Styles */
 .pageContainer {
-    min-height: 100vh;
-    padding: 4rem 0;
-    background: linear-gradient(to bottom right, #faf5ff, #ffffff);
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .mainTitle {
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #5b0060;
-  }
-  
-  .subtitle {
-    text-align: center;
-    color: #6b7280;
-    margin-bottom: 3rem;
-    font-size: 1.125rem;
-  }
-  
+  min-height: 100vh;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #2d2d2d;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
   .contentGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    max-width: 1280px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (min-width: 1024px) {
-    .contentGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  .infoCard {
-    background-color: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-  }
-  
-  .infoTitle {
-    font-size: 1.875rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    color: #5b0060;
-  }
-  
-  .infoItems {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .infoItem {
-    display: flex;
-    align-items: center;
-  }
-  
-  .iconContainer {
-    background-color: #e9d5ff;
-    padding: 0.75rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-  }
-  
-  .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #800080;
-  }
-  
-  .infoItemTitle {
-    font-weight: 700;
-    color: #111827;
-  }
-  
-  .infoItemText {
-    color: #6b7280;
-    font-size: 1rem;
-  }
-  
-  .noticeCard {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: linear-gradient(to right, #fefce8, #fef9c3);
-    border-radius: 0.5rem;
-    border-left: 4px solid #facc15;
-  }
-  
-  .noticeTitle {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #78350f;
-  }
-  
-  .noticeText {
-    color: #713f12;
-    font-size: 1rem;
-  }
-  
-  .hoursCard {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: linear-gradient(to right, #e9d5ff, #f3e8ff);
-    border-radius: 0.5rem;
-  }
-  
-  .hoursTitle {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #5b0060;
-  }
-  
-  .hoursList {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    color: #6d28d9;
-    font-size: 1rem;
-  }
-  
-  .hoursList strong {
-    font-weight: 600;
-  }
-  
-  .formCard {
-    background-color: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-  }
-  
-  .formTitle {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #5b0060;
-  }
-  
-  .formFields {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .formLabel {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #374151;
-    margin-bottom: 0.5rem;
-  }
-  
-  .formInput,
-  .formSelect,
-  .formTextarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    transition: all 0.2s ease;
-  }
-  
-  .formInput:focus,
-  .formSelect:focus,
-  .formTextarea:focus {
-    outline: none;
-    border-color: transparent;
-    box-shadow: 0 0 0 2px #800080;
-  }
-  
-  .formTextarea {
-    resize: none;
-    min-height: 7.5rem;
-  }
-  
-  .formButton {
-    width: 100%;
-    background: linear-gradient(to right, #800080, #5b0060);
-    color: #ffffff;
-    font-weight: 700;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    transform: scale(1);
-  }
-  
-  .formButton:hover {
-    background: linear-gradient(to right, #6b0066, #4c0051);
-    transform: scale(1.05);
-  }
-  
-  .formNote {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: #6b7280;
-    font-size: 0.875rem;
-  }
-  
-  .quickContactSection {
-    margin-top: 4rem;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .quickContactTitle {
-    font-size: 1.875rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #5b0060;
-  }
-  
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.infoTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #800080;
+  letter-spacing: -0.025em;
+}
+
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+}
+
+.iconContainer {
+  background: rgba(128, 0, 128, 0.1);
+  padding: 0.75rem;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #800080;
+}
+
+.infoItemTitle {
+  font-weight: 600;
+  color: #2d2d2d;
+  font-size: 1rem;
+}
+
+.infoItemText {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.noticeCard {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(254, 252, 232, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border-left: 4px solid #facc15;
+}
+
+.noticeTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #78350f;
+}
+
+.noticeText {
+  color: #713f12;
+  font-size: 0.875rem;
+}
+
+.hoursCard {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(233, 213, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+}
+
+.hoursTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #5b0060;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #6d28d9;
+  font-size: 0.875rem;
+}
+
+.hoursList strong {
+  font-weight: 600;
+}
+
+.formCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #800080;
+  letter-spacing: -0.025em;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 0.875rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #800080;
+  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.2);
+}
+
+.formTextarea {
+  resize: none;
+  min-height: 8rem;
+}
+
+.formButton {
+  width: 100%;
+  background: linear-gradient(90deg, #800080, #a855f7);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formButton:hover {
+  background: linear-gradient(90deg, #6b0066, #9333ea);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(128, 0, 128, 0.3);
+}
+
+.formNote {
+  margin-top: 1rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.quickContactSection {
+  margin-top: 3rem;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quickContactTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2d2d2d;
+  letter-spacing: -0.025em;
+}
+
+.quickContactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
   .quickContactGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (min-width: 768px) {
-    .quickContactGrid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .quickContactCard {
-    background-color: #ffffff;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .quickContactCard:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  
-  .quickContactIconContainer {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-  }
-  
-  .whatsappIconContainer {
-    background-color: #d1fae5;
-  }
-  
-  .callIconContainer {
-    background-color: #dbeafe;
-  }
-  
-  .bookIconContainer {
-    background-color: #e9d5ff;
-  }
-  
-  .quickContactIcon {
-    width: 2rem;
-    height: 2rem;
-  }
-  
-  .whatsappIcon {
-    color: #16a34a;
-  }
-  
-  .callIcon {
-    color: #2563eb;
-  }
-  
-  .bookIcon {
-    color: #800080;
-  }
-  
-  .quickContactCardTitle {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #111827;
-  }
-  
-  .quickContactCardText {
-    color: #6b7280;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-  
-  .quickContactButton {
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
-    color: #ffffff;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .whatsappButton {
-    background-color: #16a34a;
-  }
-  
-  .whatsappButton:hover {
-    background-color: #15803d;
-  }
-  
-  .callButton {
-    background-color: #2563eb;
-  }
-  
-  .callButton:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .bookButton {
-    background-color: #9333ea;
-  }
-  
-  .bookButton:hover {
-    background-color: #7e22ce;
-  }
-  
-  .mapSection {
-    margin-top: 4rem;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .mapCard {
-    background-color: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-  }
-  
-  .mapTitle {
-    font-size: 1.875rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #5b0060;
-  }
-  
-  .mapContent {
-    background-color: #e5e7eb;
-    border-radius: 0.5rem;
-    height: 16rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mapContentInner {
-    text-align: center;
-  }
-  
-  .mapIcon {
-    width: 4rem;
-    height: 4rem;
-    color: #800080;
-    margin: 0 auto 1rem;
-  }
-  
-  .mapContentTitle {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #111827;
-  }
-  
-  .mapContentText {
-    color: #6b7280;
-    font-size: 1rem;
-  }
-  
-  .mapContentNote {
-    color: #6b7280;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-  }
-  
-  .faqSection {
-    margin-top: 4rem;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .faqTitle {
-    font-size: 1.875rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #5b0060;
-  }
-  
-  .faqCard {
-    background-color: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-  }
-  
-  .faqItems {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .faqItem {
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 1rem;
-  }
-  
-  .faqItem:last-child {
-    border-bottom: none;
-  }
-  
-  .faqQuestion {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 0.5rem;
-  }
-  
-  .faqAnswer {
-    color: #6b7280;
-    font-size: 1rem;
-  }
+}
+
+.quickContactCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quickContactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.quickContactIconContainer {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.whatsappIconContainer {
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.callIconContainer {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.bookIconContainer {
+  background: rgba(128, 0, 128, 0.1);
+}
+
+.quickContactIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.whatsappIcon {
+  color: #16a34a;
+}
+
+.callIcon {
+  color: #2563eb;
+}
+
+.bookIcon {
+  color: #800080;
+}
+
+.quickContactCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d2d2d;
+}
+
+.quickContactCardText {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.quickContactButton {
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whatsappButton {
+  background: #16a34a;
+}
+
+.whatsappButton:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.callButton {
+  background: #2563eb;
+}
+
+.callButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.bookButton {
+  background: #9333ea;
+}
+
+.bookButton:hover {
+  background: #7e22ce;
+  transform: translateY(-2px);
+}
+
+.mapSection {
+  margin-top: 3rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mapCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mapTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #800080;
+  letter-spacing: -0.025em;
+}
+
+.mapContent {
+  background: rgba(229, 231, 235, 0.5);
+  border-radius: 0.75rem;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapContentInner {
+  text-align: center;
+}
+
+.mapIcon {
+  width: 3rem;
+  height: 3rem;
+  color: #800080;
+  margin: 0 auto 1rem;
+}
+
+.mapContentTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d2d2d;
+}
+
+.mapContentText {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.mapContentNote {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.faqSection {
+  margin-top: 3rem;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2d2d2d;
+  letter-spacing: -0.025em;
+}
+
+.faqCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.faqItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+}
+
+.faqAnswer {
+  color: #6b7280;
+  font-size: 0.875rem;
+}

@@ -6,7 +6,7 @@ import kalyanoLogo from '/src/assets/kalyano-logo.jpg'; // Assuming your logo is
 const Home = () => (
   <div className={styles.pageContainer}>
     {/* Hero Section */}
-    <section className={styles.heroSection}>
+    <section  className={styles.heroSection}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
           <div className={styles.logoBox}>
@@ -16,10 +16,10 @@ const Home = () => (
           </div>
         </div>
         <h1 className={styles.heroTitle}>
-          AMAPIANO <span className={styles.heroTitleHighlight}>CULTURE</span>
+        KULTURE + <span className={styles.heroTitleHighlight}>AMAPIANO</span>
         </h1>
         <p className={styles.heroDescription}>
-          KALYANO is a premier video production company specializing in AMAPIANO music videos. We bring your vision to life with stunning visuals and a deep understanding of the AMAPIANO culture. 
+          KALYANO MIX is a premier video production company specializing in AMAPIANO music videos. We bring your vision to life with stunning visuals and a deep understanding of the AMAPIANO culture. 
         </p>
         <div className={styles.heroButtons}>
           <Link

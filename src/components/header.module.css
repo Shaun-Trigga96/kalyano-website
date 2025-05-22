@@ -1,113 +1,149 @@
-/* Header Styles */
+/* Header Styles - Premium iOS-Inspired Theme */
+
 .header {
-  background-color: #000000; /* */
-  color: #ffffff; /* */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* */
-  position: sticky; /* */
-  top: 0; /* */
-  z-index: 50; /* */
+  background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for premium glass effect */
+  backdrop-filter: blur(20px); /* iOS-style blur effect */
+  -webkit-backdrop-filter: blur(20px);
+  color: #1C1C1E; /* Deep charcoal for text */
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05); /* Subtle bottom border instead of heavy shadow */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .container {
-  max-width: 1200px; /* */
-  margin: 0 auto; /* */
-  padding: 0 1rem; /* */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Slightly more padding for premium feel */
 }
 
 .headerContent {
-  display: flex; /* */
-  align-items: center; /* */
-  justify-content: space-between; /* */
-  padding: 0.75rem 0; /* */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logoContainer {
-  display: flex; /* */
-  align-items: center; /* */
-  text-decoration: none; /* Ensure link doesn't underline image */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logoImage {
-  height: 50px; /* Adjust as needed, e.g., to match original logo size */
-  width: auto;   /* Maintain aspect ratio */
-  /* Add other styles if necessary, e.g., margin-right if space is needed */
+  height: 42px; /* Slightly larger for premium feel */
+  width: auto;
+  border-radius: 8px; /* Subtle rounding */
 }
 
-/* Styles for .logoBox, .logoText, .logoSubtext from the original file were removed as they are no longer used. */
+/* Common styles for navigation links */
+.navLink,
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Premium easing */
+  border-radius: 8px; /* iOS-style rounding */
+}
 
+/* Desktop Navigation */
 .desktopNav {
-  display: flex; /* */
-  gap: 2rem; /* */
-}
-
-@media (max-width: 768px) {
-  .desktopNav {
-    display: none; /* */
-  }
+  display: flex;
+  gap: 0.25rem; /* Tighter spacing for premium look */
 }
 
 .navLink {
-  color: #ffffff; /* */
-  text-decoration: none; /* */
-  transition: color 0.3s ease; /* */
-  padding: 0.5rem 0; /* Added for better clickable area and consistent spacing */
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #1C1C1E; /* Deep charcoal */
+  font-weight: 500; /* Medium weight for premium feel */
+  font-size: 0.95rem; /* Slightly smaller, more refined */
 }
 
 .navLink:hover {
-  color: #a855f7; /* */
+  color: #007AFF; /* iOS blue */
+  background-color: rgba(0, 122, 255, 0.08); /* Subtle blue tint */
 }
 
 .navLink.active {
-  color: #a855f7; /* */
-  border-bottom: 2px solid #a855f7; /* */
+  color: #007AFF; /* iOS blue */
+  font-weight: 600;
+  background-color: rgba(0, 122, 255, 0.12);
 }
 
+/* Icon styling within nav links */
+.navIcon {
+  stroke-width: 1.5; /* Thinner, more elegant strokes */
+  display: block;
+}
+
+/* Mobile Menu Button */
 .mobileMenuButton {
-  display: none; /* */
-  color: #ffffff; /* */
-  background: none; /* */
-  border: none; /* */
-  cursor: pointer; /* */
-  padding: 0.5rem; /* Added for better touch target */
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.625rem;
+  border-radius: 8px;
+  color: #1C1C1E;
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-@media (max-width: 768px) {
-  .mobileMenuButton {
-    display: block; /* */
-  }
+.mobileMenuButton:hover {
+  color: #007AFF;
+  background-color: rgba(0, 122, 255, 0.08);
 }
 
-.mobileMenuButton svg {
-  width: 1.5rem; /* */
-  height: 1.5rem; /* */
-  display: block; /* Fix potential alignment issues */
+.mobileMenuIcon {
+  display: block;
 }
 
+/* Mobile Navigation Menu */
 .mobileNav {
-  margin-top: 1rem; /* */
-  padding-bottom: 1rem; /* */
-  border-top: 1px solid #1f2937; /* Visually separate mobile nav from header content */
-}
-
-@media (min-width: 769px) {
-  .mobileNav {
-    display: none; /* */
-  }
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.75rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 .mobileNavLink {
-  display: block; /* */
-  padding: 0.75rem 0; /* Adjusted for better touch targets */
-  color: #ffffff; /* */
-  text-decoration: none; /* */
-  transition: color 0.3s ease; /* */
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: #1C1C1E;
+  font-weight: 500;
 }
 
 .mobileNavLink:hover {
-  color: #a855f7; /* */
+  color: #007AFF;
+  background-color: rgba(0, 122, 255, 0.08);
 }
 
 .mobileNavLink.active {
-  color: #a855f7; /* */
-  font-weight: bold; /* Make active link more prominent */
+  color: #007AFF;
+  font-weight: 600;
+  background-color: rgba(0, 122, 255, 0.12);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
 }

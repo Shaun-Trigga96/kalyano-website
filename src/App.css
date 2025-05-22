@@ -10,7 +10,7 @@ main {
 }
 
 /* KALYANO 3D Logo Effect */
-/* .kalyano-logo {a
+ .kalyano-logo {
   font-family: 'Arial Black', Arial, sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
@@ -30,7 +30,7 @@ main {
   text-shadow: 
     3px 3px 6px rgba(128, 0, 128, 0.4),
     6px 6px 12px rgba(128, 0, 128, 0.3);
-} */
+} 
 
 /* Mobile Navigation Styles */
 .mobile-menu {

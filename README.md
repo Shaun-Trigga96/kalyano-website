@@ -14,9 +14,7 @@ This is the official website for KALYANO, a group of young, talented content cre
 
 ## Style Guidelines
 
-- Primary color: Saturated purple (#A020F0) to capture the vibrant and energetic vibe of AMAPIANO culture.
-- Background color: Very light purple (#F0E5F7) to provide a soft, uncluttered backdrop that lets the content pop. This is a light scheme, since it is an artistic brand website.
-- Accent color: A bold blue-purple (#6040D0) to draw attention to key interactive elements and calls to action.
+- key interactive elements and calls to action.
 - Clean and modern sans-serif fonts for headlines and body text.
 - Use icons to make navigation and content more engaging.
 - Subtle animations for transitions and user interactions, in order to improve UX.
