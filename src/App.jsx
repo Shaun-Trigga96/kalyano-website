@@ -1,31 +1,41 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import HomePageContent from './pages/Home';
+import AboutSection from './pages/About';
+import ServicesSection from './pages/Services';
+import PortfolioSection from './pages/Portfolio';
+import ContactSection from './pages/Contact';
+
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'light';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <main>
+        <HomePageContent theme={theme} />
+        <AboutSection theme={theme} />
+        <ServicesSection theme={theme} />
+        <PortfolioSection theme={theme} />
+        <ContactSection theme={theme} />
+      </main>
+      <Footer theme={theme} />
+    </div>
   );
 }
 

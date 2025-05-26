@@ -2,8 +2,17 @@
 .pageContainer {
   min-height: 100vh;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #f5f7fa, #ffffff);
+  background: var(--background);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', sans-serif;
+}
+
+.light {
+  background: var(--background); /* Uses light background from App.css */
+}
+
+.dark {
+  background: var(--background); /* Uses dark background from App.css */
 }
 
 .container {
@@ -17,13 +26,13 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.75rem;
-  color: #2d2d2d;
+  color: var(--text);
   letter-spacing: -0.025em;
 }
 
 .subtitle {
   text-align: center;
-  color: #6b7280;
+  color: var(--secondary-text);
   margin-bottom: 2.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -44,26 +53,25 @@
   }
 }
 
-.infoCard {
-  background: rgba(255, 255, 255, 0.7);
+.infoCard, .formCard, .mapCard, .faqCard {
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   border-radius: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.infoCard:hover {
+.infoCard:hover, .formCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-.infoTitle {
+.infoTitle, .formTitle, .mapTitle, .faqTitle {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #800080;
+  color: var(--accent);
   letter-spacing: -0.025em;
 }
 
@@ -79,7 +87,7 @@
 }
 
 .iconContainer {
-  background: rgba(128, 0, 128, 0.1);
+  background: rgba(0, 122, 255, 0.1); /* iOS blue accent */
   padding: 0.75rem;
   border-radius: 12px;
   margin-right: 1rem;
@@ -88,27 +96,31 @@
 .icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #800080;
+  color: var(--accent);
 }
 
 .infoItemTitle {
   font-weight: 600;
-  color: #2d2d2d;
+  color: var(--text);
   font-size: 1rem;
 }
 
 .infoItemText {
-  color: #6b7280;
+  color: var(--secondary-text);
   font-size: 0.875rem;
 }
 
 .noticeCard {
   margin-top: 1.5rem;
   padding: 1.25rem;
-  background: rgba(254, 252, 232, 0.7);
+  background: rgba(254, 252, 232, 0.7); /* Keep yellow notice styling */
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
   border-left: 4px solid #facc15;
+}
+
+.dark .noticeCard {
+  background: rgba(234, 179, 8, 0.2); /* Adjusted for dark mode */
 }
 
 .noticeTitle {
@@ -118,17 +130,29 @@
   color: #78350f;
 }
 
+.dark .noticeTitle {
+  color: #facc15; /* Brighter for dark mode */
+}
+
 .noticeText {
   color: #713f12;
   font-size: 0.875rem;
 }
 
+.dark .noticeText {
+  color: #eab308; /* Brighter for dark mode */
+}
+
 .hoursCard {
   margin-top: 1.5rem;
   padding: 1.25rem;
-  background: rgba(233, 213, 255, 0.7);
+  background: rgba(233, 213, 255, 0.7); /* Keep purple hours styling */
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
+}
+
+.dark .hoursCard {
+  background: rgba(139, 92, 246, 0.2); /* Adjusted for dark mode */
 }
 
 .hoursTitle {
@@ -136,6 +160,10 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #5b0060;
+}
+
+.dark .hoursTitle {
+  color: #a78bfa; /* Brighter for dark mode */
 }
 
 .hoursList {
@@ -146,31 +174,13 @@
   font-size: 0.875rem;
 }
 
+.dark .hoursList {
+  color: #c4b5fd; /* Brighter for dark mode */
+}
+
 .hoursList strong {
   font-weight: 600;
-}
-
-.formCard {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.formCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.formTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  color: #800080;
-  letter-spacing: -0.025em;
+  color: var(--text);
 }
 
 .formFields {
@@ -187,7 +197,7 @@
 .formLabel {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #2d2d2d;
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
@@ -196,10 +206,11 @@
 .formTextarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
   border-radius: 12px;
   font-size: 0.875rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--hover-bg);
+  color: var(--text);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -207,8 +218,8 @@
 .formSelect:focus,
 .formTextarea:focus {
   outline: none;
-  border-color: #800080;
-  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
 }
 
 .formTextarea {
@@ -218,8 +229,8 @@
 
 .formButton {
   width: 100%;
-  background: linear-gradient(90deg, #800080, #a855f7);
-  color: #ffffff;
+  background: linear-gradient(90deg, #007AFF, #5856D6); /* iOS blue gradient */
+  color: white;
   font-weight: 600;
   padding: 0.875rem 1.5rem;
   border-radius: 12px;
@@ -229,15 +240,22 @@
 }
 
 .formButton:hover {
-  background: linear-gradient(90deg, #6b0066, #9333ea);
+  background: linear-gradient(90deg, #005BB5, #4B3FBB);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(128, 0, 128, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+}
+
+.formButton:disabled {
+  background: linear-gradient(90deg, #6b7280, #4b5563);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .formNote {
   margin-top: 1rem;
   text-align: center;
-  color: #6b7280;
+  color: var(--secondary-text);
   font-size: 0.75rem;
   opacity: 0.9;
 }
@@ -254,7 +272,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2d2d2d;
+  color: var(--text);
   letter-spacing: -0.025em;
 }
 
@@ -271,18 +289,18 @@
 }
 
 .quickContactCard {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   padding: 1.5rem;
   text-align: center;
+  border: 1px solid var(--border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .quickContactCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .quickContactIconContainer {
@@ -296,15 +314,15 @@
 }
 
 .whatsappIconContainer {
-  background: rgba(22, 163, 74, 0.1);
+  background: rgba(22, 163, 74, 0.1); /* WhatsApp green */
 }
 
 .callIconContainer {
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(37, 99, 235, 0.1); /* Call blue */
 }
 
 .bookIconContainer {
-  background: rgba(128, 0, 128, 0.1);
+  background: rgba(0, 122, 255, 0.1); /* iOS blue */
 }
 
 .quickContactIcon {
@@ -321,18 +339,18 @@
 }
 
 .bookIcon {
-  color: #800080;
+  color: var(--accent);
 }
 
 .quickContactCardTitle {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #2d2d2d;
+  color: var(--text);
 }
 
 .quickContactCardText {
-  color: #6b7280;
+  color: var(--secondary-text);
   margin-bottom: 1rem;
   font-size: 0.875rem;
 }
@@ -340,7 +358,7 @@
 .quickContactButton {
   padding: 0.625rem 1.25rem;
   border-radius: 10px;
-  color: #ffffff;
+  color: white;
   font-weight: 600;
   font-size: 0.875rem;
   border: none;
@@ -367,12 +385,23 @@
 }
 
 .bookButton {
-  background: #9333ea;
+  background: linear-gradient(90deg, #007AFF, #5856D6); /* iOS blue */
 }
 
 .bookButton:hover {
-  background: #7e22ce;
+  background: linear-gradient(90deg, #005BB5, #4B3FBB);
   transform: translateY(-2px);
+}
+
+.submitStatusMessage {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--text);
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
 }
 
 .mapSection {
@@ -380,24 +409,6 @@
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.mapCard {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.mapTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #800080;
-  letter-spacing: -0.025em;
 }
 
 .mapContent {
@@ -409,6 +420,10 @@
   justify-content: center;
 }
 
+.dark .mapContent {
+  background: rgba(75, 85, 99, 0.5); /* Darker for dark mode */
+}
+
 .mapContentInner {
   text-align: center;
 }
@@ -416,7 +431,7 @@
 .mapIcon {
   width: 3rem;
   height: 3rem;
-  color: #800080;
+  color: var(--accent);
   margin: 0 auto 1rem;
 }
 
@@ -424,16 +439,16 @@
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #2d2d2d;
+  color: var(--text);
 }
 
-.mapContentText {
-  color: #6b7280;
+.contentText {
+  color: var(--secondary-text);
   font-size: 0.875rem;
 }
 
-.mapContentNote {
-  color: #6b7280;
+.contentNote {
+  color: var(--secondary-text);
   font-size: 0.75rem;
   margin-top: 0.5rem;
 }
@@ -445,24 +460,6 @@
   margin-right: auto;
 }
 
-.faqTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #2d2d2d;
-  letter-spacing: -0.025em;
-}
-
-.faqCard {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 .faqItems {
   display: flex;
   flex-direction: column;
@@ -470,7 +467,7 @@
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 1rem;
 }
 
@@ -481,11 +478,20 @@
 .faqQuestion {
   font-size: 1rem;
   font-weight: 600;
-  color: #2d2d2d;
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
 .faqAnswer {
-  color: #6b7280;
+  color: var(--secondary-text);
   font-size: 0.875rem;
+}
+
+/* Theme-specific secondary text */
+:root[data-theme="light"] {
+  --secondary-text: #6E6E73; /* iOS secondary text for light mode */
+}
+
+:root[data-theme="dark"] {
+  --secondary-text: #AEAEB2; /* iOS secondary text for dark mode */
 }

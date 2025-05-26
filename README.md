@@ -1,5 +1,8 @@
 # KALYANO Website
 
+![Alt](src/assets/kalyano-logo.jpg)
+![Alt](src/assets/vision-logo.jpg)
+
 ## Description
 
 This is the official website for KALYANO, a group of young, talented content creators specializing in AMAPIANO culture. The website showcases their video mix production services for DJs and artists, highlights their portfolio through their YouTube channel, and provides information about the group and contact details.
@@ -31,7 +34,6 @@ This is the official website for KALYANO, a group of young, talented content cre
 
 - [React.js](https://react.dev/) for building the user interface.
 - [React Router](https://reactrouter.com/) for client-side navigation.
-- [Tailwind CSS](https://tailwindcss.com/) for responsive, vibrant styling.
 - [YouTube Data API](https://developers.google.com/youtube/v3) for fetching portfolio videos.
 - [Vite](https://vitejs.dev/) for fast development and build processes.
 
@@ -74,29 +76,45 @@ This is the official website for KALYANO, a group of young, talented content cre
 
 ## Project Structure
 
-```
+```bash
 kalyano-website/
+├── .firebase/               # Firebase hosting and functions configuration (if used)
+├── dist/                    # Build output directory for deployment
 ├── public/
 │   └── assets/
 │       └── logo.png
 ├── src/
 │   ├── components/
 │   │   ├── Header.jsx
+│   │   ├── header.module.css
 │   │   ├── Footer.jsx
-│   │   └── ...
+│   │   ├── footer.module.css
+│   │   ├── BookingModal.jsx
+│   │   └── bookingModal.module.css
 │   ├── pages/
 │   │   ├── Home.jsx
+│   │   ├── home.module.css
 │   │   ├── About.jsx
+│   │   ├── about.module.css
 │   │   ├── Services.jsx
+│   │   ├── services.module.css
 │   │   ├── Portfolio.jsx
+│   │   ├── portfolio.module.css
 │   │   ├── Contact.jsx
-│   │   └── ...
+│   │   └── contact.module.css
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
 ├── .env
+├── .firebaserc              # Firebase project configuration
+├── .gitignore               # Specifies intentionally untracked files that Git should ignore
+├── eslint.config.js         # ESLint configuration file
+├── firebase.json            # Firebase hosting configuration
+├── index.html               # Main HTML entry point for Vite
 ├── package.json
+├── package-lock.json
 └── README.md
+├── vite.config.js           # Vite configuration file
 ```
 
 - **public/assets/**: Stores static assets like the KALYANO logo.

@@ -1,22 +1,37 @@
 /* Home Page Styles - Premium iOS-Inspired Theme */
 .pageContainer {
   min-height: 100vh;
-  background: linear-gradient(135deg, #F2F2F7 0%, #FFFFFF 100%); /* Subtle gradient */
-  color: #1C1C1E; /* Deep charcoal for text */
+  background: var(--background);
+  color: var(--text);
+}
+
+.light {
+  background: var(--background); /* Uses light background from App.css */
+}
+
+.dark {
+  background: var(--background); /* Uses dark background from App.css */
 }
 
 /* Hero Section */
 .heroSection {
   background-color: transparent;
   padding: 6rem 0;
-  color: #1C1C1E;
+  color: var(--text);
 }
 
 .logoImage {
-  height: 60px; /* Larger for impact */
+  height: 60px;
   width: auto;
-  border-radius: 12px; /* More premium rounding */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px;
+}
+
+.light .logoImage {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for light mode */
+}
+
+.dark .logoImage {
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2); /* Subtle glow for dark mode */
 }
 
 .container {
@@ -38,24 +53,32 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1); /* Layered shadows */
 }
 
+.light .logoBox {
+  background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%); /* Dark gradient for light mode */
+}
+
+.dark .logoBox {
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Slightly lighter for dark mode */
+}
+
 .logoText {
   font-size: 3.75rem;
-  font-weight: 700; /* Slightly lighter than 900 for elegance */
-  color: #FFFFFF;
+  font-weight: 700;
+  color: var(--text);
   margin-bottom: 0.5rem;
-  letter-spacing: -0.02em; /* Tight letter spacing for premium feel */
+  letter-spacing: -0.02em;
 }
 
 .logoSubtext {
   font-size: 1.5rem;
-  color: #AEAEB2; /* iOS secondary gray */
+  color: var(--secondary-text);
 }
 
 .heroTitle {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -67,7 +90,7 @@
 }
 
 .heroTitleHighlight {
-  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%); /* Premium gradient text */
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,7 +99,7 @@
 
 .heroDescription {
   font-size: 1.25rem;
-  color: #8E8E93; /* iOS secondary text color */
+  color: var(--secondary-text);
   margin-bottom: 2.5rem;
   line-height: 1.6;
   max-width: 600px;
@@ -98,15 +121,15 @@
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%); /* Premium gradient */
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+  color: white;
   padding: 1rem 2rem;
-  border-radius: 12px; /* More rounded */
+  border-radius: 12px;
   font-size: 1.125rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3); /* Blue glow */
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
   border: none;
 }
 
@@ -116,9 +139,9 @@
 }
 
 .secondaryButton {
-  border: 2px solid #1C1C1E;
-  color: #1C1C1E;
-  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid var(--text);
+  color: var(--text);
+  background-color: var(--hover-bg);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   border-radius: 12px;
@@ -129,10 +152,10 @@
 }
 
 .secondaryButton:hover {
-  background-color: #1C1C1E;
-  color: #FFFFFF;
+  background-color: var(--text);
+  color: var(--background);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(28, 28, 30, 0.3);
+  box-shadow: 0 8px 25px var(--shadow);
 }
 
 /* Features Section */
@@ -146,7 +169,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3.5rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
@@ -164,38 +187,47 @@
 }
 
 .featureCard {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--hover-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0px rgba(255, 255, 255, 0.5) inset;
+  box-shadow: var(--shadow);
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .featureCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 48px var(--shadow);
 }
 
 .featureIcon {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  filter: grayscale(0);
+  color: var(--text);
 }
 
 .featureTitle {
   font-size: 1.375rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
 .featureDescription {
   font-size: 1rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   line-height: 1.6;
+}
+
+/* Theme-specific secondary text */
+:root[data-theme="light"] {
+  --secondary-text: #6E6E73; /* iOS secondary text for light mode */
+}
+
+:root[data-theme="dark"] {
+  --secondary-text: #AEAEB2; /* iOS secondary text for dark mode */
 }

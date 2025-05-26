@@ -2,7 +2,16 @@
 .pageContainer {
   min-height: 100vh;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #F2F2F7 0%, #FFFFFF 100%);
+  background: var(--background);
+  color: var(--text);
+}
+
+.light {
+  background: var(--background); /* Uses light background from App.css */
+}
+
+.dark {
+  background: var(--background); /* Uses dark background from App.css */
 }
 
 .container {
@@ -21,7 +30,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3.5rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
@@ -55,13 +64,13 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
 .missionText {
   font-size: 1.125rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -71,13 +80,13 @@
 }
 
 .amapianoCard {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--hover-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0px rgba(255, 255, 255, 0.5) inset;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -89,23 +98,31 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
 .amapianoText {
   font-size: 1rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   line-height: 1.6;
 }
 
 .expertiseSection {
-  background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Adjusted for dark mode */
+  color: var(--text);
   padding: 3.5rem 2.5rem;
   border-radius: 20px;
   margin-bottom: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.light .expertiseSection {
+  background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%); /* Original for light mode */
+}
+
+.dark .expertiseSection {
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Slightly lighter for dark mode */
 }
 
 @media (max-width: 640px) {
@@ -119,7 +136,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 2.5rem;
-  color: #ffffff;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
@@ -163,7 +180,7 @@
 
 .expertiseList li {
   font-size: 1rem;
-  color: #AEAEB2;
+  color: var(--secondary-text);
   padding-left: 2rem;
   position: relative;
   line-height: 1.5;
@@ -184,7 +201,7 @@
 }
 
 .expertiseList li:hover {
-  color: #FFFFFF;
+  color: var(--text);
 }
 
 /* Team Section Styles */
@@ -193,25 +210,33 @@
 }
 
 .teamCard {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--hover-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 
 .teamCardHeader {
-  background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%);
   padding: 2.5rem;
   text-align: center;
+}
+
+.light .teamCardHeader {
+  background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%); /* Original for light mode */
+}
+
+.dark .teamCardHeader {
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Slightly lighter for dark mode */
 }
 
 .teamCardTitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text);
   margin: 0;
   display: flex;
   align-items: center;
@@ -224,6 +249,7 @@
   width: 2rem;
   height: 2rem;
   stroke-width: 1.5;
+  stroke: var(--text);
 }
 
 .teamCardContent {
@@ -238,7 +264,7 @@
 
 .teamDescription {
   font-size: 1.125rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   text-align: center;
   margin-bottom: 2.5rem;
   line-height: 1.7;
@@ -274,14 +300,14 @@
 }
 
 .memberCard {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0px rgba(255, 255, 255, 0.5) inset;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
   width: 100%;
   max-width: 300px;
@@ -289,7 +315,6 @@
 
 .memberCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
 .memberCardContent {
@@ -302,21 +327,27 @@
 .memberImage {
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #007AFF;
+  border: 3px solid var(--accent);
   transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.light .memberImage {
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.2); /* Light mode shadow */
+}
+
+.dark .memberImage {
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2); /* Dark mode glow */
 }
 
 .memberCard:hover .memberImage {
   border-color: #5856D6;
-  box-shadow: 0 8px 24px rgba(88, 86, 214, 0.3);
-  transform: scale(1.05);
 }
 
 .memberName {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1C1C1E;
+  color: var(--text);
   margin: 0;
   text-align: center;
   letter-spacing: -0.01em;
@@ -325,7 +356,7 @@
 
 .memberRole {
   font-size: 0.875rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   margin: 0;
   font-weight: 500;
   text-transform: uppercase;
@@ -337,8 +368,17 @@
   .pageContainer {
     padding: 2rem 0;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
+}
+
+/* Theme-specific secondary text */
+:root[data-theme="light"] {
+  --secondary-text: #6E6E73; /* iOS secondary text for light mode */
+}
+
+:root[data-theme="dark"] {
+  --secondary-text: #AEAEB2; /* iOS secondary text for dark mode */
 }

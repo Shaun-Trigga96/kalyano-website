@@ -1,16 +1,55 @@
 /* KALYANO App Styles */
+
+/* Define theme variables */
+:root[data-theme="light"] {
+  --background: rgba(255, 255, 255, 0.95);
+  --text: #1C1C1E;
+  --accent: #007AFF;
+  --hover-bg: rgba(0, 122, 255, 0.08);
+  --active-bg: rgba(0, 122, 255, 0.12);
+  --border: rgba(0, 0, 0, 0.06);
+  --shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: linear-gradient(135deg, #800080, #a855f7);
+  --scrollbar-thumb-hover: linear-gradient(135deg, #6b0066, #9333ea);
+}
+
+:root[data-theme="dark"] {
+  --background: rgba(28, 28, 30, 0.95); /* iOS-inspired dark charcoal */
+  --text: #F5F5F7; /* Light gray for readability */
+  --accent: #007AFF; /* Same iOS blue for consistency */
+  --hover-bg: rgba(255, 255, 255, 0.08); /* Subtle white for hover */
+  --active-bg: rgba(255, 255, 255, 0.12); /* Slightly stronger for active */
+  --border: rgba(255, 255, 255, 0.1); /* Light border for dark mode */
+  --shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --scrollbar-track: #2C2C2E; /* Darker track */
+  --scrollbar-thumb: linear-gradient(135deg, #800080, #a855f7);
+  --scrollbar-thumb-hover: linear-gradient(135deg, #6b0066, #9333ea);
+}
+
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--background);
+  color: var(--text);
 }
 
 main {
   flex: 1;
 }
 
+/* Scroll margin for sections */
+#home, #about, #services, #portfolio, #contact {
+  scroll-margin-top: 70px; /* Adjust to header height */
+}
+
+.pageContainerWithId {
+  scroll-margin-top: 70px;
+}
+
 /* KALYANO 3D Logo Effect */
- .kalyano-logo {
+.kalyano-logo {
   font-family: 'Arial Black', Arial, sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
@@ -30,7 +69,7 @@ main {
   text-shadow: 
     3px 3px 6px rgba(128, 0, 128, 0.4),
     6px 6px 12px rgba(128, 0, 128, 0.3);
-} 
+}
 
 /* Mobile Navigation Styles */
 .mobile-menu {
@@ -74,7 +113,7 @@ main {
 }
 
 /* AMAPIANO Pulse Animation */
-@keyframes amapianoSpulse {
+@keyframes amapianoPulse {
   0%, 100% {
     transform: scale(1);
     box-shadow: 0 0 20px rgba(128, 0, 128, 0.3);
@@ -172,16 +211,16 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #800080, #a855f7);
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #6b0066, #9333ea);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Responsive Design Helpers */

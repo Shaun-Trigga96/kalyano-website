@@ -2,8 +2,17 @@
 .pageContainer {
   min-height: 100vh;
   padding: 6rem 0 4rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: var(--background);
+  color: var(--text);
   position: relative;
+}
+
+.light {
+  background: var(--background); /* Uses light background from App.css */
+}
+
+.dark {
+  background: var(--background); /* Uses dark background from App.css */
 }
 
 .pageContainer::before {
@@ -32,7 +41,7 @@
   font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1C1C1E;
+  color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -43,44 +52,53 @@
 }
 
 .serviceCard {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--hover-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
-  box-shadow: 
-    0 32px 64px -12px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(255, 255, 255, 0.9),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .serviceCard:hover {
   transform: translateY(-4px);
-  box-shadow: 
-    0 40px 80px -12px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(255, 255, 255, 0.9),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .headerSection {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%);
+  color: var(--text);
   padding: 3rem 2rem;
-  display: flex; /* Helps with centering if needed */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+.light .headerSection {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%); /* Original for light mode */
+}
+
+.dark .headerSection {
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Slightly lighter for dark mode */
+}
+
 .headerLogo {
-  max-width: 150px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-top: 0.5rem; /* Space above the logo */
-  margin-bottom: 0.5rem; /* Space below the logo */
+  max-width: 150px;
+  height: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.light .headerLogo {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.dark .headerLogo {
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));
 }
 
 .headerSection::before {
@@ -97,7 +115,7 @@
 .headerTitle {
   font-size: 2rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text);
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
   position: relative;
@@ -107,7 +125,7 @@
 .headerSubtitle {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--secondary-text);
   margin-bottom: 0.75rem;
   position: relative;
   z-index: 1;
@@ -115,7 +133,7 @@
 
 .headerDescription {
   font-size: 1rem;
-  color: #94a3b8;
+  color: var(--secondary-text);
   margin: 0;
   position: relative;
   z-index: 1;
@@ -128,11 +146,11 @@
 .packageSection {
   margin-bottom: 3rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -151,8 +169,6 @@
 
 .packageSection:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.8);
 }
 
 .packageHeader {
@@ -172,14 +188,14 @@
 .packageTitle {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1C1C1E;
+  color: var(--text);
   margin-bottom: 0.25rem;
   letter-spacing: -0.01em;
 }
 
 .packageSubtitle {
   font-size: 0.95rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   font-weight: 500;
   margin-bottom: 0.75rem;
 }
@@ -198,13 +214,11 @@
 .popularBadge {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .premiumBadge {
   background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 .packagePriceSection {
@@ -215,7 +229,7 @@
 .packagePrice {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #1C1C1E;
+  color: var(--text);
   display: block;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -223,7 +237,7 @@
 
 .packagePriceLabel {
   font-size: 0.875rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   font-weight: 500;
   margin-top: 0.25rem;
 }
@@ -231,37 +245,6 @@
 .packageContent {
   position: relative;
   z-index: 1;
-}
-
-.packageGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .packageGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.packageColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-.featureGroup {
-  margin-bottom: 1.5rem;
-}
-
-.featureGroupTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.875rem;
 }
 
 .packageList {
@@ -278,7 +261,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--text);
   line-height: 1.5;
   padding: 0.5rem 0;
 }
@@ -288,29 +271,30 @@
   flex-shrink: 0;
   width: 24px;
   text-align: center;
+  color: var(--accent);
 }
 
 .addonsSection {
   margin-bottom: 3rem;
   padding: 2rem;
-  background: rgba(248, 250, 252, 0.8);
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(226, 232, 240, 0.5);
+  border: 1px solid var(--border);
 }
 
 .addonsTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1C1C1E;
+  color: var(--text);
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
 }
 
 .addonsDescription {
   font-size: 0.95rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
   margin-bottom: 1.5rem;
 }
 
@@ -331,18 +315,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--hover-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .addonCard:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .addonHeader {
@@ -362,6 +344,7 @@
   background: rgba(99, 102, 241, 0.1);
   border-radius: 8px;
   flex-shrink: 0;
+  color: var(--accent);
 }
 
 .addonInfo {
@@ -371,29 +354,37 @@
 .addonName {
   font-size: 1rem;
   font-weight: 600;
-  color: #1C1C1E;
+  color: var(--text);
   margin-bottom: 0.125rem;
 }
 
 .addonDesc {
   font-size: 0.875rem;
-  color: #8E8E93;
+  color: var(--secondary-text);
 }
 
 .addonPrice {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #059669;
+  color: var(--accent);
   flex-shrink: 0;
 }
 
 .ctaSection {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%);
   padding: 3rem 2.5rem;
   border-radius: 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.light .ctaSection {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%); /* Original for light mode */
+}
+
+.dark .ctaSection {
+  background: linear-gradient(135deg, #2C2C2E 0%, #3C3C3E 100%); /* Slightly lighter for dark mode */
 }
 
 .ctaSection::before {
@@ -416,13 +407,13 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
 .ctaText {
   font-size: 1.125rem;
-  color: #cbd5e1;
+  color: var(--secondary-text);
   margin-bottom: 2rem;
   line-height: 1.6;
   max-width: 600px;
@@ -437,14 +428,26 @@
 .ctaContact {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: white;
   margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.ctaContact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
 }
 
 .ctaPhone {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--accent);
   letter-spacing: -0.01em;
 }
 
@@ -475,7 +478,7 @@
   .pageContainer {
     padding: 4rem 0 2rem;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
@@ -530,4 +533,13 @@
   .addonsSection {
     padding: 1.5rem;
   }
+}
+
+/* Theme-specific secondary text */
+:root[data-theme="light"] {
+  --secondary-text: #6E6E73; /* iOS secondary text for light mode */
+}
+
+:root[data-theme="dark"] {
+  --secondary-text: #AEAEB2; /* iOS secondary text for dark mode */
 }

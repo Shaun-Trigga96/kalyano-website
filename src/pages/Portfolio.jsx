@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './portfolio.module.css';
 
-const Portfolio = () => {
-  // Retrieve API key and Channel ID from environment variables or constants
-  // Ensure your API key is stored in a .env file as VITE_YOUTUBE_API_KEY for Vite projects
+const PortfolioSection = ({ theme }) => {
   const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-  // Replace 'YOUR_KALYANO_CHANNEL_ID' with the actual Channel ID you found
   const KALYANO_CHANNEL_ID = 'UCYrjLc-k1-fPkdvncWGHrzg';
 
   const [videos, setVideos] = useState([]);
@@ -30,7 +27,6 @@ const Portfolio = () => {
       setLoading(true);
       setError(null);
       try {
-        // Fetches the 8 most recent videos from the specified channel
         const response = await fetch(
           `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${KALYANO_CHANNEL_ID}&part=snippet&maxResults=8&type=video&order=date`
         );
@@ -50,17 +46,24 @@ const Portfolio = () => {
       } catch (err) {
         console.error('Failed to fetch YouTube videos:', err);
         setError(err.message || 'Failed to load videos. Please try again later.');
-        setVideos([]); // Clear videos on error
+        setVideos([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchYouTubeVideos();
-  }, []);
+  }, [YOUTUBE_API_KEY]);
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <div className={styles.pageContainer}>
+    <div id="portfolio" className={`${styles.pageContainer} ${theme === 'dark' ? styles.dark : styles.light}`}>
       <div className={styles.container}>
         <div className={styles.headerSection}>
           <h1 className={styles.mainTitle}>Our Portfolio</h1>
@@ -104,7 +107,7 @@ const Portfolio = () => {
               <div className={styles.errorContent}>
                 <h3 className={styles.errorTitle}>Unable to Load Videos</h3>
                 <p className={styles.errorText}>{error}</p>
-                <button 
+                <button
                   className={styles.retryButton}
                   onClick={() => window.location.reload()}
                 >
@@ -200,7 +203,14 @@ const Portfolio = () => {
                   <span className={styles.buttonSubtitle}>@kalyano</span>
                 </div>
               </a>
-              <a href="/services" className={styles.servicesButton}>
+              <a
+                href="#services"
+                className={styles.servicesButton}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('services');
+                }}
+              >
                 <span className={styles.servicesIcon}>💼</span>
                 <span>View Our Services</span>
               </a>
@@ -212,4 +222,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default PortfolioSection;

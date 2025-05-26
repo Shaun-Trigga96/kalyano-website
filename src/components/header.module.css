@@ -1,22 +1,22 @@
 /* Header Styles - Premium iOS-Inspired Theme */
 
 .header {
-  background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for premium glass effect */
-  backdrop-filter: blur(20px); /* iOS-style blur effect */
+  background-color: var(--background);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  color: #1C1C1E; /* Deep charcoal for text */
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05); /* Subtle bottom border instead of heavy shadow */
+  color: var(--text);
+  box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 50;
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem; /* Slightly more padding for premium feel */
+  padding: 0 1.5rem;
 }
 
 .headerContent {
@@ -32,50 +32,83 @@
 }
 
 .logoImage {
-  height: 42px; /* Slightly larger for premium feel */
+  height: 42px;
   width: auto;
-  border-radius: 8px; /* Subtle rounding */
+  border-radius: 8px;
 }
 
 /* Common styles for navigation links */
 .navLink,
-.mobileNavLink {
+.mobileNavLink,
+.mobileThemeToggleButton {
   display: flex;
   align-items: center;
   text-decoration: none;
-  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Premium easing */
-  border-radius: 8px; /* iOS-style rounding */
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border-radius: 8px;
 }
 
 /* Desktop Navigation */
 .desktopNav {
   display: flex;
-  gap: 0.25rem; /* Tighter spacing for premium look */
+  gap: 0.25rem;
 }
 
 .navLink {
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  color: #1C1C1E; /* Deep charcoal */
-  font-weight: 500; /* Medium weight for premium feel */
-  font-size: 0.95rem; /* Slightly smaller, more refined */
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .navLink:hover {
-  color: #007AFF; /* iOS blue */
-  background-color: rgba(0, 122, 255, 0.08); /* Subtle blue tint */
+  color: var(--accent);
+  background-color: var(--hover-bg);
 }
 
 .navLink.active {
-  color: #007AFF; /* iOS blue */
+  color: var(--accent);
   font-weight: 600;
-  background-color: rgba(0, 122, 255, 0.12);
+  background-color: var(--active-bg);
 }
 
 /* Icon styling within nav links */
-.navIcon {
-  stroke-width: 1.5; /* Thinner, more elegant strokes */
+.navIcon,
+.themeIcon {
+  stroke-width: 1.5;
   display: block;
+  color: var(--text);
+}
+
+.navLink:hover .navIcon,
+.navLink.active .navIcon,
+.themeToggleButton:hover .themeIcon,
+.mobileThemeToggleButton:hover .themeIcon {
+  color: var(--accent);
+}
+
+/* Theme Toggle Button */
+.themeToggleButton,
+.mobileThemeToggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.625rem;
+  border-radius: 8px;
+  color: var(--text);
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.themeToggleButton:hover,
+.mobileThemeToggleButton:hover {
+  color: var(--accent);
+  background-color: var(--hover-bg);
+}
+
+.themeToggleContainer {
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile Menu Button */
@@ -86,13 +119,13 @@
   cursor: pointer;
   padding: 0.625rem;
   border-radius: 8px;
-  color: #1C1C1E;
+  color: var(--text);
   transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .mobileMenuButton:hover {
-  color: #007AFF;
-  background-color: rgba(0, 122, 255, 0.08);
+  color: var(--accent);
+  background-color: var(--hover-bg);
 }
 
 .mobileMenuIcon {
@@ -101,10 +134,10 @@
 
 /* Mobile Navigation Menu */
 .mobileNav {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--background);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--border);
   padding: 0.75rem 0;
   position: absolute;
   top: 100%;
@@ -113,27 +146,30 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
-.mobileNavLink {
+.mobileNavLink,
+.mobileThemeToggleButton {
   gap: 0.75rem;
   padding: 1rem 1.5rem;
-  color: #1C1C1E;
+  color: var(--text);
   font-weight: 500;
 }
 
-.mobileNavLink:hover {
-  color: #007AFF;
-  background-color: rgba(0, 122, 255, 0.08);
+.mobileNavLink:hover,
+.mobileThemeToggleButton:hover {
+  color: var(--accent);
+  background-color: var(--hover-bg);
 }
 
 .mobileNavLink.active {
-  color: #007AFF;
+  color: var(--accent);
   font-weight: 600;
-  background-color: rgba(0, 122, 255, 0.12);
+  background-color: var(--active-bg);
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
-  .desktopNav {
+  .desktopNav,
+  .themeToggleContainer {
     display: none;
   }
 
